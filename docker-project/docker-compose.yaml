@@ -7,7 +7,7 @@ services:
     container_name: backendcnt
     networks:
       - pavan
-    command: sh -c "sleep 10 && node /app/index.js"
+    command: sh -c "sleep 30 && node /app/index.js"
     depends_on:
       - database
   frontend:
