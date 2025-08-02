@@ -23,9 +23,10 @@ resource aws_security_group "docker_sg" {
 }
 
 resource "aws_instance" "docker" {
-  ami           = "ami-0c614dee691cbbf37" 
+  ami           = "ami-09c813fb71547fc4f" 
   instance_type = "t2.micro"
-  security_groups = [aws_security_group.docker_sg.name]
+  vpc_security_group_ids = [aws_security_group.docker_sg.id]
+
   
   
 #we need large disk size to install docker so we are using below

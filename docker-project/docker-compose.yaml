@@ -1,0 +1,23 @@
+networks:
+ pavan: {}
+services:
+  backend:
+    image: backend:1.0
+    container_name: backendcnt
+    networks:
+      - pavan
+    command: sh -c "sleep 10 && node /app/index.js"
+    depends_on:
+      - database
+  frontend:
+    image: frontend:1.0
+    container_name: frontendcnt
+    networks:
+      - pavan
+  database:
+    image: database:1.0
+    container_name: databasecnt
+    networks:
+      - pavan
+    ports:
+      - "80:80"
