@@ -1,5 +1,6 @@
 networks:
- pavan: {}
+ pavan:
+    name: pavan
 services:
   backend:
     image: backend:1.0
